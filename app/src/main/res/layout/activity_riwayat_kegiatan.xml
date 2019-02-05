@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RiwayatKegiatan">
+
+    <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbarDay"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/riwayat_kegiatan"
+                    android:layout_centerVertical="true"
+                    android:textColor="#FFF"
+                    android:layout_marginRight="3dp"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:background="@color/magenta_dark"
+            android:paddingLeft="5dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_calendar_with_a_clock"/>
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="0dp" />
+
+            <TextView
+                android:id="@+id/calen_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Kalender"
+                android:textColor="#FFF" />
+        </LinearLayout>
+
+        <com.github.sundeepk.compactcalendarview.CompactCalendarView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/compactcalendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:compactCalendarCurrentDayBackgroundColor="#72002bd7"
+            app:compactCalendarCurrentDayTextColor="#FFF"
+            app:compactCalendarCurrentSelectedDayBackgroundColor="#64ffffff"
+            app:compactCalendarCurrentSelectedDayTextColor="#FFF"
+            app:compactCalendarDisplayOtherMonthDays="true"
+            app:compactCalendarMultiEventIndicatorColor="#fff"
+            app:compactCalendarOtherMonthDaysTextColor="#46000000"
+            app:compactCalendarBackgroundColor="@color/magenta_light"
+            app:compactCalendarShouldSelectFirstDayOfMonthOnScroll="false"
+            app:compactCalendarTargetHeight="200dp"
+            app:compactCalendarTextColor="#ffffff"
+            android:padding="10dp"
+            app:compactCalendarTextSize="14sp" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/riwayat_recycler_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/compactcalendar_view">
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

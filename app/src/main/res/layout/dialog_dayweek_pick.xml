@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@color/magenta_light">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_calendar_with_a_clock"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jadwal Kegiatanmu"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:paddingStart="10dp"
+            android:layout_gravity="center_vertical"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_dismiss_dayweek"
+            android:layout_width="26dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:tint="#fff"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#00ffffff"
+            android:src="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/group_rb_target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rb_daily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Setiap Hari"
+                android:textSize="20sp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <RadioButton
+                android:id="@+id/rb_kustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saat Hari"
+                android:textSize="20sp"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linlay_daypicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15px"
+        android:paddingRight="15px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="@string/text_dialog_dayweek"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="16dp" />
+
+        <include layout="@layout/daypicker_layout" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save_day_week_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/matcha_latte"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="fill"
+        android:text="simpan" />
+    
+</LinearLayout>
+

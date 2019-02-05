@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Yawmi Amal</string>
+
+    <!-- Strings related to login -->
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="openmaps">
+        Lokasi Tidak Bisa Ditemukan, Coba Buka Aplikasi Maps, Setelah Itu Keluar Aplikasi Maps Dan Buka Aplikasi Yaumi Amal
+    </string>
+
+    <!--menu Profil-->
+    <string name="kota">Lokasi</string>
+    <string name="riwayat">Riwayat Amal</string>
+    <string name="grafik">Grafik Pencapaian</string>
+    <string name="artikel">Artikel</string>
+    <string name="aboutme">Tentang Aplikasi</string>
+    <string name="logoutme">Logout</string>
+    <string name="your_name">Your Name</string>
+    <string name="jadwal_salat">Jadwal Salat</string>
+    <string name="riwayat_kegiatan">Riwayat Kegiatan</string>
+    <string name="password">Password</string>
+    <string name="username">Email</string>
+    <string name="register">Masuk Dengan Google</string>
+    <string name="sign_in">Masuk Dengan Akun Yaumi</string>
+    <string name="sign_in_b">Masuk</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="ulangi_password">Ulangi Password</string>
+    <string name="kembali">Kembali</string>
+    <string name="buat_akun">Buat Akun</string>
+    <string name="ok">OK</string>
+    <string name="notifikasi_artikel">Notifikasi Artikel</string>
+    <string name="nama">Nama</string>
+    <string name="pencapaian">Pencapaian</string>
+    <string name="pengaturan">Pengaturan</string>
+    <string name="perbarui">perbarui</string>
+    <string name="simpan">simpan</string>
+    <string name="target_pencapaian">Target Pencapaian</string>
+    <string name="text_dialog_dayweek">Pengingat Sesuai Hari Yang Dipilih</string>
+
+</resources>

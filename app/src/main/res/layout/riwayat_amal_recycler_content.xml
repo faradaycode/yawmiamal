@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/r_amal_par"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="6dip"
+        android:padding="5dp"
+        android:layout_toRightOf="@+id/bt_setoramal"
+        android:src="@mipmap/ic_yawmi" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/icon"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/r_amal_title"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="SHOLAT MAGHRIB BERJAMAAH"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/st_finished"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_check_green"
+        android:tint="#4CAF50"/>
+
+    <ImageView
+        android:id="@+id/st_forgeted"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="5dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_close"
+        android:tint="#F44336"/>
+
+</RelativeLayout>

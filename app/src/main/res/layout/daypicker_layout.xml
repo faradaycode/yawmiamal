@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/monday_toggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/toggleButton"
+                android:background="@drawable/daypicker_toogle_color"
+                android:textOn="S"
+                android:textOff="S"
+                android:textSize="22sp"
+                android:text="New ToggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Senin"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/tuesday_toggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/toggleButton"
+                android:background="@drawable/daypicker_toogle_color"
+                android:textOn="S"
+                android:textOff="S"
+                android:textSize="22sp"
+                android:text="New ToggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Selasa"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/wednesday_toggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/toggleButton"
+                android:background="@drawable/daypicker_toogle_color"
+                android:textOn="R"
+                android:textOff="R"
+                android:textSize="22sp"
+                android:text="New ToggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Rabu"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/thursday_toggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/toggleButton"
+                android:background="@drawable/daypicker_toogle_color"
+                android:textOn="K"
+                android:textOff="K"
+                android:textSize="22sp"
+                android:text="New ToggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Kamis"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/friday_toggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/toggleButton"
+                android:background="@drawable/daypicker_toogle_color"
+                android:textOn="J"
+                android:textOff="J"
+                android:textSize="22sp"
+                android:text="New ToggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Jumat"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/saturday_toggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/toggleButton"
+                android:background="@drawable/daypicker_toogle_color"
+                android:textOn="S"
+                android:textOff="S"
+                android:textSize="22sp"
+                android:text="New ToggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Sabtu"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ToggleButton
+                android:id="@+id/sunday_toggle"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/daypicker_toogle_color"
+                android:textOn="M"
+                android:textOff="M"
+                android:textSize="22sp"
+                style="@style/toggleButton"
+                android:text="New ToggleButton" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Minggu"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

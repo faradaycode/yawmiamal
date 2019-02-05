@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_amal_par"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+
+    <CheckBox
+        android:id="@+id/bt_setoramal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="6dip"
+        android:layout_toRightOf="@+id/bt_setoramal"
+        android:src="@drawable/logoyawmi" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/icon"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/myamal_title"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="SHOLAT MAGHRIB BERJAMAAH"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/myamal_subtitle"
+            android:layout_marginTop="5dp"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="subtitle"
+            android:textColor="#6b6b6b"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bt_editlist"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/bt_deletelist"
+        android:layout_centerVertical="true"
+        android:tint="@color/colorPrimary"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_cog" />
+
+    <ImageView
+        android:id="@+id/bt_deletelist"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:tint="#FF0000"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_delete" />
+
+</RelativeLayout>

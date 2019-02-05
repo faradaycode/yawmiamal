@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:padding="5dp"
+        android:background="@color/magenta_light"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:tint="#fff"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_target"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/target_pencapaian"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center_vertical"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_dismiss_target"
+            android:layout_width="26dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:tint="#fff"
+            android:padding="5dp"
+            android:background="#00ffffff"
+            android:src="@drawable/ic_close" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:padding="10dp">
+
+        <RadioGroup
+            android:id="@+id/group_rb_target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <RadioButton
+                android:id="@+id/rb_sudah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah"
+                android:textSize="20sp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <RadioButton
+                android:id="@+id/rb_syarat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selesai Saat"
+                android:textSize="20sp"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/custom_target_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:paddingBottom="10dp"
+                android:text="Tentukan target yang ingin dicapai"/>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edt_target"
+                    android:layout_column="0"
+                    android:inputType="number"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:id="@+id/spin_target"
+                    android:layout_column="1"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content" />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save_my_target"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/matcha_latte"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="fill"
+        android:text="@string/simpan" />
+
+</LinearLayout>

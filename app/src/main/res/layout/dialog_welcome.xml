@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+        
+        <ImageView
+            android:id="@+id/welcome_yalogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:padding="2dp"
+            android:src="@drawable/logoyawmi"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/yaumifont_magenta"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/welcome_yalogo"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/welcome_teks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:text="@string/appbar_scrolling_view_behavior"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/welcome_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/ok"
+            android:textSize="18sp"
+            android:textColor="@color/magenta_dark"
+            android:background="#00010000"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorAccent">#2de200</color>
+
+    <!-- custom color -->
+    <color name="matcha_latte">#87CC1D</color>
+    <color name="pastel_grey">#aaaaaa</color>
+    <color name="magenta_dark">#ff4cff</color>
+    <color name="magenta_light">#ff66ff</color>
+    <color name="background_color">#e9e9e9</color>
+</resources>

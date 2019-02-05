@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "294708766402",
+    "firebase_url": "https://yaumiamal.firebaseio.com",
+    "project_id": "yaumiamal",
+    "storage_bucket": "yaumiamal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294708766402:android:ac4d004aed0f265e",
+        "android_client_info": {
+          "package_name": "com.magentamedia.yaumiamal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294708766402-ohphef5leg5k9f1u1ogdcqngrjqnelgq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.magentamedia.yaumiamal",
+            "certificate_hash": "cb393e9d2846669562b86877765efc0bf808b803"
+          }
+        },
+        {
+          "client_id": "294708766402-558fos5olsva5rrmuon6lo6a23b1hv86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxosiqjR5tVi3lUk0kNnJTteDpG9YeLm4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294708766402-558fos5olsva5rrmuon6lo6a23b1hv86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

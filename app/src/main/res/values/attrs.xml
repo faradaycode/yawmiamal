@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="customButton">
+        <attr name="Btitle" format="string" />
+        <attr name="Bicon" format="reference" />
+        <attr name="Bbackground" format="reference" />
+    </declare-styleable>
+</resources>
