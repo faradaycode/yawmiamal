@@ -14,7 +14,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,30 +26,29 @@ import android.widget.TextView;
 
 import com.magentamedia.yaumiamal.AturAmal;
 import com.magentamedia.yaumiamal.R;
-import com.magentamedia.yaumiamal.models.MyAmalModel;
-import com.magentamedia.yaumiamal.models.amalParcel;
+import com.magentamedia.yaumiamal.models.Alarm;
 import com.magentamedia.yaumiamal.providers.YawmiMethodes;
-import com.magentamedia.yaumiamal.receivers.amalDatas;
+import com.magentamedia.yaumiamal.receivers.YaumiReceivers;
+import com.magentamedia.yaumiamal.services.ServIntentYaumi;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmalResultListener {
+public class MyAmalRecyclerFragment extends Fragment implements YaumiReceivers.onAmalResultListener {
     private RecyclerView recyclerView;
     private PickAmalListAdapter adapter;
-    private List<MyAmalModel> my_amal;
+    private List<Alarm> my_amal;
     private TextView meter;
     private ProgressBar pb;
     private YawmiMethodes me;
-    private amalDatas amal_datas;
-    private static String LOADAMALTAG = "com.receiver.loadamal";
-    private static String TAG = MyAmalRecyclerFragment.class.getSimpleName();
+    private YaumiReceivers amal_datas;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         me = new YawmiMethodes();
-        amal_datas = new amalDatas(this);
+        amal_datas = new YaumiReceivers(this);
         my_amal = new ArrayList<>();
     }
 
@@ -59,7 +57,7 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
         super.onStart();
 
         IntentFilter filter = new IntentFilter();
-        filter.addAction(LOADAMALTAG);
+        filter.addAction(ServIntentYaumi.ACTION_COMPLETE);
         LocalBroadcastManager.getInstance(getContext()).registerReceiver(amal_datas, filter);
     }
 
@@ -89,7 +87,7 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
     }
 
     @Override
-    public void onAmalLoaded(ArrayList<MyAmalModel> amals) {
+    public void onAmalLoaded(ArrayList<Alarm> amals) {
         my_amal = amals;
     }
 
@@ -113,9 +111,11 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
             pb = getActivity().findViewById(R.id.progressBar2);
         }
 
-        public void bindData(MyAmalModel al) {
-            rlText.setText(me.capitalizem(al.getAmalan().toLowerCase()).toString());
-            rlSubText.setText("Target: " + me.capitalizem(al.getmTarget()));
+        public void bindData(Alarm al) {
+            String waktunya = "Dilakukan saat jam " + me.toTimes(new Date(al.getTime()));
+
+            rlText.setText(me.capitalizem(al.getAlarmLabel().toLowerCase()).toString());
+            rlSubText.setText(waktunya);
         }
 
     }
@@ -123,9 +123,9 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
     //adapter
     private class PickAmalListAdapter extends RecyclerView.Adapter<AmalRecyclerViewHolder> {
 
-        private List<MyAmalModel> my_amalist;
+        private List<Alarm> my_amalist;
 
-        public PickAmalListAdapter(List<MyAmalModel> data) {
+        public PickAmalListAdapter(List<Alarm> data) {
             my_amalist = data;
         }
 
@@ -139,10 +139,9 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
 
         @Override
         public void onBindViewHolder(final AmalRecyclerViewHolder holder, int position) {
-            final MyAmalModel al = my_amalist.get(position);
-            final String label = my_amalist.get(position).getAmalan();
-            final int id_amal = my_amalist.get(position).getId_a();
-            final int id_list_amal = my_amalist.get(position).getId_la();
+            final Alarm al = my_amalist.get(position);
+            final String label = my_amalist.get(position).getAlarmLabel();
+            final long mTime = my_amalist.get(position).getTime();
             final Handler handler = new Handler();
 
             //click to finishing amal
@@ -154,8 +153,8 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
 
                     if (isChecked) {
 
-                        String sql = "UPDATE tb_passed_amal SET status_passed = 1 WHERE id_a = " +
-                                id_amal;
+                        String sql = "UPDATE tb_passed_amal SET status_passed = 1 WHERE id_la = " +
+                                "(SELECT id_la FROM tb_list_amalan WHERE amalan = '" + label + "')";
 
                         int res = me.SQLWriteMode(getActivity(), sql);
 
@@ -190,7 +189,7 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
                                 case DialogInterface.BUTTON_POSITIVE:
 
                                     String sql = "DELETE from tb_amalanku WHERE id_la = " +
-                                            id_list_amal;
+                                            "(SELECT id_la FROM tb_list_amalan WHERE amalan = '" + label + "')";
                                     me.SQLWriteMode(getActivity(), sql);
                                     removeAt(holder.getAdapterPosition());
 
@@ -225,7 +224,6 @@ public class MyAmalRecyclerFragment extends Fragment implements amalDatas.onAmal
 
                     Intent nextPage = new Intent(getActivity(), AturAmal.class);
                     nextPage.putExtra("edited", true);
-                    nextPage.putExtra("id_a", id_amal);
                     nextPage.putExtra("amal_label", label);
 
                     startActivity(nextPage);
