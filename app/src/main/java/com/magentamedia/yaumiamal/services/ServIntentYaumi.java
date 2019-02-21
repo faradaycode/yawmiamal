@@ -32,8 +32,11 @@ public class ServIntentYaumi extends IntentService {
     public static final String TAG = ServIntentYaumi.class.getSimpleName();
     public static final String LIST_AMAL = "com.receiver.loadamal";
     public static final String EXTRAS_DATA = "amal_extras";
-    private static int REQUEST_ID = 880;
+    public static final String FRAGMENT_DATA = "fragment_data";
+    public static final String ACTION_COMPLETE = TAG + ".ACTION_COMPLETE";
+
     private ArrayList<Alarm> alarms;
+    private ArrayList<MyAmalModel> parcelAmal;
 
     public ServIntentYaumi() {
         super(TAG);
@@ -44,6 +47,8 @@ public class ServIntentYaumi extends IntentService {
         super.onCreate();
 
         alarms = new ArrayList<>();
+        parcelAmal = new ArrayList<>();
+
         Log.wtf(TAG, "IntentService On Line");
     }
 
@@ -63,31 +68,11 @@ public class ServIntentYaumi extends IntentService {
         getAzan();
         getAlarm();
 
-        //check arraylist
-        if (alarms.size() > 0) {
+        Intent sender = new Intent(ACTION_COMPLETE);
+        sender.putParcelableArrayListExtra(EXTRAS_DATA, alarms);
+        sender.putParcelableArrayListExtra(FRAGMENT_DATA, parcelAmal);
 
-            AlarmManager mgrAlarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-
-            //set alarm each data in arraylist
-            for (int i = 0; i < alarms.size(); i++) {
-                Intent alarmintent = new Intent(ServIntentYaumi.this, AlarmsReceiver.class);
-                alarmintent.putExtra("TITLE", alarms.get(i).getAlarmLabel());
-                alarmintent.putExtra("CONTENT", alarms.get(i).getAlarmText());
-                alarmintent.putExtra("A_ID", REQUEST_ID + i);
-
-                PendingIntent pendingIntent = PendingIntent
-                        .getBroadcast(ServIntentYaumi.this, REQUEST_ID + i,
-                                alarmintent, 0);
-
-                assert mgrAlarm != null;
-
-                if (System.currentTimeMillis() < alarms.get(i).getTime()) {
-                    mgrAlarm.setExact(AlarmManager.RTC_WAKEUP, alarms.get(i).getTime(), pendingIntent);
-                }
-            }
-
-            Log.wtf(TAG, alarms.toString());
-        }
+        LocalBroadcastManager.getInstance(this).sendBroadcast(sender);
     }
 
     //static methode for calling or recall service
@@ -97,23 +82,7 @@ public class ServIntentYaumi extends IntentService {
         context.startService(launcher);
     }
 
-    public void cancelAlarm() {
-
-        Intent alarmintent = new Intent(ServIntentYaumi.this, AlarmsReceiver.class);
-
-        for (int i = 0; i < alarms.size(); i++) {
-            PendingIntent pendingIntent = PendingIntent
-                    .getBroadcast(ServIntentYaumi.this, REQUEST_ID + i,
-                            alarmintent, 0);
-
-            AlarmManager mgrAlarm = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-
-            assert mgrAlarm != null;
-            mgrAlarm.cancel(pendingIntent);
-        }
-    }
-
-    //get all amalan and its time, status and label
+    //get all amalan time, status and label
     public void getAlarm() {
 
         me = new YawmiMethodes();
@@ -128,7 +97,6 @@ public class ServIntentYaumi extends IntentService {
 
         String reg = ":";
         Cursor cursor = me.joinData(ServIntentYaumi.this, sql);
-        ArrayList<MyAmalModel> parcelAmal = new ArrayList<>();
 
         if (cursor.getCount() > 0) {
             for (int i = 0; i < cursor.getCount(); i++) {
@@ -147,10 +115,6 @@ public class ServIntentYaumi extends IntentService {
 
                 Log.wtf(TAG + ".sqlreturn", cursor.getString(0));
             }
-
-            Intent sender = new Intent();
-            sender.setAction(LIST_AMAL);
-            sender.putParcelableArrayListExtra(EXTRAS_DATA, parcelAmal);
         }
     }
 
@@ -171,7 +135,7 @@ public class ServIntentYaumi extends IntentService {
         String MAGHRIB = "maghrib";
         String ISYA = "isya";
         String teks = "jangan lupa salat ";
-        String prefix = "tiba waktu ";
+        String prefix = "azan ";
 
         PrayerTimes prayerTimes = me.getAzan(latitude, longtitude, altitude, timezone);
 
