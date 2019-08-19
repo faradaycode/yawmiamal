@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="iconhome">72dp</dimen>
+    <dimen name="texthome">26sp</dimen>
+    <dimen name="miniconhome">42dp</dimen>
+</resources>
