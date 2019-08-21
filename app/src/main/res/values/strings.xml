@@ -3,4 +3,9 @@
     <string name="artikel">Artikel</string>
     <string name="profile">Profil</string>
     <string name="pengaturan">Pengaturan</string>
+    <string name="lokasi">Lokasi Anda</string>
+    <string name="pemberitahuan">Pemberitahuan</string>
+    <string name="feedback">Kritik dan Saran</string>
+    <string name="about">Tentang</string>
+    <string name="detailtask">Selengkapnya</string>
 </resources>

@@ -8,4 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="settingst" parent="AppTheme">
+        <item name="android:textViewStyle">@style/BlackTX</item>
+    </style>
+
+    <style name="mainst" parent="AppTheme">
+        <item name="android:textViewStyle">@style/WhiteTX</item>
+    </style>
+
+    <style name="BlackTX" parent="android:Widget.TextView">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="WhiteTX" parent="android:Widget.TextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="clickable">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
 </resources>

@@ -2,5 +2,8 @@
 <resources>
     <dimen name="iconhome">72dp</dimen>
     <dimen name="texthome">26sp</dimen>
+    <dimen name="txsetting">18sp</dimen>
     <dimen name="miniconhome">42dp</dimen>
+    <dimen name="defa16">16dp</dimen>
+    <dimen name="logoinabout">96dp</dimen>
 </resources>
