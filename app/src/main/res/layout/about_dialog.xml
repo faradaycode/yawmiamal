@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Created by Ferdi Reza on 8/20/19 11:37 AM
+  ~ Copyright (c) 2019 . All rights reserved
+  ~ Last modified 8/20/19 11:37 AM
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tx_namaapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="@dimen/logoinabout"
+        android:layout_height="@dimen/logoinabout"
+        android:layout_marginTop="@dimen/defa16"
+        android:layout_marginBottom="@dimen/defa16"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/tx_bawah_gambar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
